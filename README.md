@@ -31,6 +31,11 @@ hello liba. 版本1
 ➜  load-so-demo git:(master)
 ```
 
+可以得到这样的结论：
+
++ 同一个 `liba.so` 可以被多次加载和链接。`man dlopen` 中提到了这一点，"A second call to dlopen() with the same path will return the same handle"
++ `liba.so` 和 `libs/liba.so` 可以被同时加载和链接，且两个共享库中的 `foo()` 方法都可正常被调用，并不冲突
+
 ## JNI
 
 首先编译 `Main.java` 得到类文件，
